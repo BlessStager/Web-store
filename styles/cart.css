@@ -1,0 +1,255 @@
+.nav {
+  position: absolute;
+  margin-top: 275px;
+  margin-left: 260px;
+  margin-right: 20px;
+  width: 744px;
+  justify-content: space-between; }
+  .nav a, .nav span, .nav img {
+    margin-right: 17px; }
+  .nav a, .nav span {
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.14; }
+  .nav a {
+    color: #1ab9ce; }
+  .nav span {
+    color: #999; }
+
+.order {
+  position: absolute;
+  margin-top: 330px;
+  margin-left: 260px;
+  margin-right: 20px;
+  width: 744px; }
+
+.order-header {
+  font-family: Roboto;
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 0.61;
+  color: #dadada; }
+
+.order-content {
+  width: 744px;
+  height: 651px;
+  background: url(../cart-images/orger-bg.png) 0 0 no-repeat;
+  margin-top: 22px; }
+
+.order-menu {
+  margin-left: 19px;
+  display: flex; }
+  .order-menu div {
+    margin-top: 20px;
+    margin-right: 10px;
+    padding: 20px 23px 17px 27px;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 900;
+    line-height: 1.14; }
+  .order-menu div:hover {
+    cursor: pointer; }
+  .order-menu .content-order-btn {
+    color: #72c9d4; }
+  .order-menu .content-order-btn-active {
+    color: #fff;
+    background-color: #72c9d4; }
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 32px; }
+
+.data {
+  flex: 1;
+  margin-left: 46px; }
+  .data .last {
+    align-items: flex-start; }
+    .data .last span {
+      margin-top: 10px; }
+    .data .last textarea {
+      resize: none;
+      height: 120px;
+      padding: 10px; }
+  .data input, .data textarea {
+    padding: 0 10px; }
+  .data div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 900;
+    line-height: 2.86;
+    color: #333;
+    line-height: 100%;
+    margin-bottom: 9px; }
+  .data .ml {
+    color: #f68038; }
+  .data input, .data select, .data textarea {
+    width: 216px;
+    height: 31px;
+    border: solid 1px #e5e5e5; }
+  .data p {
+    display: flex;
+    align-items: center;
+    width: 216px;
+    margin-left: 160px;
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 3.33;
+    color: #666; }
+  .data .check {
+    width: auto;
+    margin-right: 14px; }
+  .data span {
+    line-height: 100%; }
+
+.explanation {
+  width: 250px;
+  margin-left: 40px;
+  margin-right: 32px;
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #666; }
+  .explanation .ml {
+    color: #f68038; }
+
+.confirm-order {
+  position: absolute;
+  margin-top: 1080px;
+  margin-left: 260px;
+  margin-right: 20px;
+  width: 744px; }
+
+.confirm-order-header {
+  font-family: Roboto;
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 0.61;
+  color: #dadada;
+  margin-bottom: 31px; }
+
+.confirm-card {
+  border: 1px solid #f5f5f5;
+  height: 143px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 11px; }
+
+.confirm-card-content {
+  padding-right: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1; }
+  .confirm-card-content .name {
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 900;
+    line-height: 1.57;
+    color: #36949f; }
+  .confirm-card-content .light-name {
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.57;
+    color: #36949f; }
+  .confirm-card-content .amount-block {
+    margin-top: 14px; }
+  .confirm-card-content .amount {
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 1;
+    color: #333; }
+  .confirm-card-content .images {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .confirm-card-content .images .field {
+      width: 56px;
+      height: 33px;
+      border: 1px solid #999;
+      margin-left: 12px;
+      margin-right: 12px;
+      padding: 0 5px;
+      font-family: Roboto;
+      font-size: 20px;
+      text-align: center; }
+  .confirm-card-content .total {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.38;
+    color: #999; }
+
+.image {
+  padding-top: 27px;
+  padding-bottom: 16px;
+  padding-left: 22px; }
+
+.close {
+  position: relative;
+  margin-right: 14px;
+  margin-top: 24px; }
+
+.confirm-order-total {
+  margin-top: 28px;
+  margin-right: 17px;
+  display: flex;
+  justify-content: end;
+  align-items: center; }
+  .confirm-order-total span {
+    font-family: Roboto;
+    font-weight: 900;
+    line-height: 0.67; }
+  .confirm-order-total .p1 {
+    font-size: 24px;
+    color: #333; }
+  .confirm-order-total .p2 {
+    font-size: 36px;
+    color: #f68038; }
+
+.btn-confirm {
+  margin-top: 40px;
+  display: flex;
+  justify-content: end;
+  align-items: center; }
+  .btn-confirm span:hover {
+    cursor: pointer; }
+  .btn-confirm span {
+    position: absolute;
+    margin-right: 19px;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 900;
+    line-height: 1.71;
+    color: #fff; }
+
+.confirm-cards {
+  width: 744px;
+  padding-right: 10px; }
+
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+input[type="number"] {
+  -moz-appearance: textfield; }
+
+input[type="number"]:hover,
+input[type="number"]:focus {
+  -moz-appearance: number-input; }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+/*# sourceMappingURL=cart.css.map */

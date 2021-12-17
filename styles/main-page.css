@@ -1,0 +1,773 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+.hidden {
+  display: none; }
+
+.wrapper {
+  max-width: 1024px;
+  margin: 0 auto; }
+
+header {
+  background: url(../images/bcg-header.png) 0 0 no-repeat;
+  position: absolute;
+  width: 1024px;
+  height: 162px;
+  display: flex;
+  justify-content: space-between; }
+
+.left-header {
+  margin: 59px 0 0 20px;
+  display: flex;
+  justify-content: space-between; }
+
+.f-col-left-header, .s-col-left-header, .t-col-left-header {
+  display: flex;
+  flex-direction: column;
+  margin-right: 7px; }
+  .f-col-left-header li, .s-col-left-header li, .t-col-left-header li {
+    padding: 7px 11px;
+    font-family: Play;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.29;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fff;
+    text-decoration: underline; }
+
+.center-header {
+  margin: 57px auto 0;
+  display: flex;
+  flex-direction: column; }
+  .center-header .logo {
+    margin-left: 30px;
+    font-family: Play;
+    font-size: 48px;
+    font-weight: bold;
+    text-align: left;
+    color: #fff;
+    margin-bottom: 4px;
+    margin-right: 20px; }
+  .center-header .type {
+    margin-left: 36px;
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 300;
+    text-align: left;
+    color: #fff; }
+
+.right-header {
+  display: flex;
+  margin-right: 30px; }
+  .right-header .tel {
+    margin-top: 77px;
+    margin-right: 19px; }
+  .right-header .split-line {
+    width: 1px;
+    height: 28px;
+    margin: 73px 29px 18px 33px;
+    background-color: #fff; }
+  .right-header .label {
+    display: flex;
+    flex-direction: column;
+    margin-top: 71px; }
+  .right-header .city {
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 300;
+    text-align: left;
+    color: #fff; }
+  .right-header .number {
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 900;
+    text-align: left;
+    color: #fff; }
+
+.left-bottom-header {
+  position: absolute;
+  margin-left: 31px;
+  margin-top: 146px;
+  width: 380px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+.left-bottom-header-item {
+  display: flex;
+  align-items: center; }
+  .left-bottom-header-item img {
+    margin-right: 8px; }
+  .left-bottom-header-item a {
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 300;
+    text-align: left;
+    color: #999; }
+  .left-bottom-header-item .active {
+    color: #1ab9ce; }
+
+.right-bottom-header {
+  position: absolute;
+  margin-left: 610px;
+  margin-top: 140px;
+  width: 380px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .right-bottom-header .back-call {
+    display: flex;
+    align-items: top; }
+    .right-bottom-header .back-call a {
+      font-family: Roboto;
+      font-size: 14px;
+      font-weight: 300;
+      text-align: left;
+      color: #1ab9ce; }
+    .right-bottom-header .back-call img {
+      margin-right: 12px; }
+  .right-bottom-header .time-work {
+    display: flex;
+    align-items: center; }
+    .right-bottom-header .time-work img {
+      margin-right: 12px; }
+  .right-bottom-header .cart {
+    display: flex; }
+    .right-bottom-header .cart .label {
+      display: flex;
+      width: 41px;
+      height: 25px;
+      padding: 10px;
+      background-color: #f68038;
+      border-radius: 20px;
+      align-items: center;
+      position: absolute;
+      margin-left: 20px; }
+      .right-bottom-header .cart .label span {
+        font-family: Roboto;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: left;
+        color: #fff; }
+  .right-bottom-header p {
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 300;
+    text-align: left;
+    color: #999; }
+
+* {
+  box-sizing: border-box;
+  outline: none; }
+
+a {
+  color: inherit;
+  text-decoration: none; }
+
+ul {
+  margin: 0;
+  padding: 0; }
+
+li {
+  list-style-type: none; }
+
+aside {
+  position: absolute;
+  margin-top: 200px;
+  width: 240px; }
+
+.list-of-products {
+  margin-left: 20px;
+  background: url(../images/aside-bg.png) 0 0 no-repeat;
+  background-size: cover;
+  padding-bottom: 9px; }
+  .list-of-products .heading {
+    display: flex;
+    align-items: center;
+    margin: 0 0 30px 16px; }
+    .list-of-products .heading div {
+      margin-top: 21px;
+      font-family: Roboto;
+      font-size: 30px;
+      font-weight: 900;
+      text-align: left;
+      color: #fff; }
+    .list-of-products .heading img {
+      margin-top: 21px;
+      margin-right: 8px; }
+  .list-of-products a {
+    word-break: break-all; }
+  .list-of-products li {
+    margin: 19px 10px 19px 16px;
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 300;
+    text-align: left;
+    color: #fff;
+    display: flex;
+    justify-content: space-between; }
+  .list-of-products .split-line {
+    width: 220px;
+    height: 1px;
+    margin: 11px 0 14px;
+    background-color: #1aa7b9; }
+
+.catalog-item:hover {
+  cursor: pointer; }
+
+.news {
+  margin-top: 44px;
+  margin-left: 20px; }
+  .news .name {
+    font-family: Roboto;
+    font-size: 30px;
+    font-weight: 900;
+    text-align: left;
+    color: #dadada; }
+
+.news-content {
+  margin-top: 36px; }
+
+.news-header {
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 900;
+  text-align: center;
+  color: #333; }
+
+.news-info {
+  margin-top: 22px;
+  display: flex; }
+
+.news-date {
+  width: 28px;
+  height: 39px;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 300;
+  text-align: center;
+  color: #d8d8d8;
+  margin-right: 17px;
+  overflow-wrap: break-word; }
+
+.news-text {
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 300;
+  text-align: left;
+  color: #666;
+  margin-bottom: 11px; }
+
+.reviews {
+  margin-top: 65px;
+  margin-left: 20px;
+  margin-bottom: 49px; }
+
+.rev-name {
+  font-family: Roboto;
+  font-size: 30px;
+  font-weight: 900;
+  text-align: left;
+  color: #dadada;
+  margin-bottom: 32px; }
+
+.review-content {
+  margin-bottom: 20px; }
+
+.top-review-content {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 11px; }
+
+.bottom-review-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 12px 19px 8px; }
+
+.rewiewer-name {
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 900;
+  text-align: left;
+  color: #333; }
+
+.review-date {
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 300;
+  text-align: left;
+  color: #999; }
+
+.review-marks {
+  font-family: Roboto;
+  font-size: 48px;
+  font-weight: 900;
+  text-align: left;
+  color: #dadada;
+  line-height: 100%; }
+
+.review-text {
+  width: 170px;
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 300;
+  text-align: left;
+  color: #666; }
+
+.brends {
+  position: absolute;
+  width: 1024px;
+  margin-top: 1990px; }
+
+.brends-line {
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: 7.2px;
+  text-align: left;
+  color: #dadada;
+  margin-bottom: 12px; }
+
+.brend-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 23px; }
+
+.about-company {
+  position: absolute;
+  margin-top: 1650px;
+  background: url(../images/about-company-bg.png) 0 0 no-repeat;
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 984px;
+  padding: 45px 57px 61px 37px; }
+  .about-company .header {
+    font-family: Roboto;
+    font-size: 30px;
+    font-weight: 900;
+    text-align: left;
+    color: #22b7ca;
+    margin-bottom: 33px; }
+  .about-company .info {
+    display: flex;
+    justify-content: space-between; }
+    .about-company .info div {
+      font-family: Roboto;
+      font-size: 12px;
+      font-weight: normal;
+      text-align: left;
+      color: #fff;
+      line-height: 1.5; }
+  .about-company .info-left {
+    width: 425px; }
+  .about-company .info-right {
+    width: 425px; }
+  .about-company img {
+    margin-right: 20px; }
+
+footer {
+  position: absolute;
+  margin-top: 2415px;
+  width: 1024px; }
+
+.footer-line {
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: 7.2px;
+  text-align: left;
+  color: #dadada; }
+
+.links-top, .links-bottom {
+  display: flex;
+  align-items: center; }
+  .links-top span, .links-top a, .links-bottom span, .links-bottom a {
+    margin-right: 35px; }
+  .links-top span, .links-bottom span {
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 900;
+    text-align: left;
+    color: #333; }
+  .links-top a, .links-bottom a {
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 300;
+    text-align: left;
+    color: #1ab9ce; }
+
+.links-top {
+  margin-top: 13px;
+  margin-bottom: 1px; }
+
+.links-bottom {
+  margin-top: 13px;
+  margin-bottom: 14px; }
+
+.footer-logos, .numbers, .t-companies {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+.bottom-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 21px;
+  margin-bottom: 11px;
+  width: 984px;
+  margin-left: 20px;
+  margin-right: 20px; }
+
+.footer-logos {
+  margin-bottom: 54px; }
+
+.left-footer-logos {
+  margin-right: 98px; }
+
+.main-logo {
+  background: url(../images/footer/main-logo-bg.png) 0 0 no-repeat;
+  width: 163px;
+  height: 98px;
+  padding: 15px;
+  margin-bottom: 28px; }
+  .main-logo .header {
+    font-family: Play;
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    line-height: 100%;
+    margin-bottom: 5px; }
+  .main-logo .desc {
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 300;
+    text-align: center;
+    color: #fff; }
+
+.numbers {
+  margin-left: 8px;
+  margin-right: 7px; }
+  .numbers p {
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 900;
+    text-align: left;
+    color: #333; }
+
+.right-footer-logos p {
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 900;
+  text-align: left;
+  color: #999;
+  margin-bottom: 19px; }
+.right-footer-logos img {
+  margin-right: 18px; }
+
+.t-companies {
+  margin-top: 20px; }
+
+.footer-cards img {
+  margin-right: 25px; }
+
+.right-footer {
+  margin-right: 0px; }
+
+.footer-split-line img {
+  width: 984px;
+  margin-left: 20px;
+  margin-right: 20px; }
+
+.soc-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 7px;
+  margin-left: 20px;
+  margin-right: 27px;
+  margin-bottom: 13px; }
+  .soc-block img {
+    margin-left: 13px; }
+
+.search {
+  position: absolute;
+  margin-top: 200px;
+  margin-left: 260px;
+  margin-right: 20px;
+  width: 744px;
+  display: flex;
+  justify-content: space-between; }
+  .search input {
+    flex: 1;
+    border: 1px solid #f2f2f2; }
+
+.left-search {
+  width: 116px;
+  height: 39px;
+  background: url(../images/search/magn-bg.png) 0 0 no-repeat;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 14px; }
+  .left-search span {
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 300;
+    text-align: left;
+    color: #999; }
+
+.right-search {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .right-search span {
+    position: absolute;
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 900;
+    text-align: left;
+    color: #fff; }
+
+.cards {
+  position: absolute;
+  margin-top: 260px;
+  margin-left: 260px;
+  margin-right: 20px;
+  width: 744px; }
+
+.cards-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .cards-header .header {
+    font-family: Roboto;
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: 0.9px;
+    text-align: left;
+    color: #dadada; }
+  .cards-header .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+  .cards-header .p1 {
+    font-family: Roboto;
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: 0.75px;
+    color: #333;
+    margin-left: 24px; }
+  .cards-header .p2 {
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.35px;
+    color: #999;
+    margin-right: 24px; }
+
+.card {
+  margin-top: 31px;
+  margin-left: 25px;
+  margin-right: 80px;
+  padding: 42px 11px 15px 23px;
+  width: 263px;
+  float: left; }
+  .card .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+  .card .cart {
+    margin-right: 77px; }
+  .card .price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+  .card span {
+    margin-right: 6px;
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 1;
+    color: #333; }
+  .card p {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 1.38;
+    color: #36949f; }
+  .card .p1 {
+    font-weight: 300;
+    margin-bottom: 30px; }
+
+.ra-form {
+  width: 750px;
+  height: 400px;
+  font-family: Roboto;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  background-color: white;
+  margin-top: 200px;
+  margin-left: 250px;
+  border: 1px solid #999;
+  color: #1aa7b9;
+  padding: 5px 60px; }
+  .ra-form div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; }
+  .ra-form h2 {
+    text-align: center; }
+  .ra-form input {
+    width: 50%; }
+  .ra-form .btn {
+    width: 100%;
+    height: 40px;
+    background-color: #1aa7b9;
+    color: white;
+    font-family: Roboto;
+    font-size: 16px;
+    border-radius: 10px; }
+
+.all-news, .new-page {
+  position: absolute;
+  margin: 260px 20px 0 260px;
+  margin-top: 260px;
+  margin-left: 260px;
+  margin-right: 20px;
+  width: 744px; }
+
+.all-news-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px; }
+  .all-news-header .header {
+    font-family: Roboto;
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: 0.9px;
+    text-align: left;
+    color: #dadada; }
+  .all-news-header .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+  .all-news-header .p1 {
+    font-family: Roboto;
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: 0.75px;
+    color: #333;
+    margin-left: 24px;
+    margin-right: 5px; }
+  .all-news-header .p2 {
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.35px;
+    color: #999;
+    margin-right: 24px; }
+  .all-news-header .p3 {
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.35px;
+    color: #999;
+    margin-right: 5px; }
+
+.all-news-new {
+  padding: 10px;
+  border: 1px solid #1aa7b9;
+  margin-bottom: 20px;
+  font-family: Roboto;
+  height: 200px;
+  flex-direction: column;
+  display: none; }
+  .all-news-new span {
+    color: #1aa7b9; }
+
+.all-news-new-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px; }
+
+.all-news-new-content {
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 12px; }
+
+.new-page {
+  font-family: Roboto;
+  letter-spacing: 0.9px; }
+
+.new-page-date {
+  white-space: nowrap; }
+
+.new-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  color: #1aa7b9; }
+
+.new-page-title {
+  font-size: 36px;
+  font-weight: 900;
+  text-align: center;
+  word-break: break-word;
+  margin-right: 100px; }
+
+.new-page-content {
+  word-break: break-word;
+  font-size: 16px;
+  padding: 0px 40px; }
+
+#cartItemsCount {
+  padding: 5px; }
+
+#form-btns {
+  position: absolute;
+  margin-top: 200px;
+  margin-right: 20px;
+  margin-left: 260px; }
+
+#form-btns button, .forms button {
+  margin-right: 10px;
+  padding: 5px;
+  background-color: #1aa7b9;
+  color: white;
+  font-family: Roboto;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none; }
+
+#form-btns button:hover, .forms button:hover {
+  cursor: pointer; }
+
+.forms {
+  position: absolute;
+  margin-top: 240px;
+  margin-left: 260px;
+  margin-right: 20px; }
+  .forms div form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px; }
+  .forms input {
+    margin-bottom: 5px; }
+  .forms #form-category, .forms #form-product, .forms #form-news {
+    flex-direction: column; }
+
+/*# sourceMappingURL=main-page.css.map */
