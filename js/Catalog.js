@@ -41,6 +41,9 @@ function displayCatalogPage(typeProduct, pageNumber){
 }
 
 function catalogAssignment(catalogPage, pageNumber, typeProduct){
+    if (catalogPage[0].length == 0){
+        alert("Ничего не найдено!");
+    }
     countPage = catalogPage[2];
     document.getElementById('catalog-option').innerHTML = 1;
 
@@ -196,9 +199,3 @@ function decrementPage(typeProduct, pageNumber){
         openCatalogPage(typeProduct, pageNumber);
     }
 }
-
-$(document).ready(() => {
-    $('.cart-href').click((e) => {
-        location = "cart.php";
-    });
-});

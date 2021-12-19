@@ -11,12 +11,21 @@
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/Catalog.js"></script>
     <script src="js/GetCartItems.js"></script>
+    <script src="js/Search.js"></script>
 </head>
 <body>
     <?php
-    if(isset($_GET['type']) && isset($_GET['page'])){
+    if(isset($_GET['type'])){
         $type = $_GET['type'];
-        $pageNumber = $_GET['page'];
+        $pageNumber = $_GET['page'];   
+    }
+
+    if(isset($_GET['page'])){
+        $pageNumber = $_GET['page'];   
+    }
+
+    if(isset($_GET['search'])){
+        $search = $_GET['search'];
     }
     ?>
     <div id="wrapper" class="wrapper hidden">
@@ -80,7 +89,7 @@
         <div class="list-of-products">
             <div class="heading">
                 <div>КАТАЛОГ ТОВАРОВ</div>
-                <img onclick="wrapListProducts()" width="36" height="35" src="images/btn-roll.png" alt="button">
+                <img id="catalog-btn" onclick="wrapListProducts()" width="36" height="35" src="images/btn-roll.png" alt="button">
             </div>
             <ul id="listProducts">
                 <div id="catalog-item" class="catalog-item" style="display: none;">
@@ -99,8 +108,8 @@
             <span>Поиск</span>
             <img src="images/search/arrow.png" alt="arrow"/>
         </div>
-        <input style="padding: 10px;" type="text">
-        <div class="right-search">
+        <input id="search-input" style="padding: 10px;" type="text">
+        <div id="search-btn" class="right-search">
             <img src="images/search/btn-search.png" alt="button"/>
             <span>НАЙТИ</span>
         </div>
@@ -219,7 +228,11 @@
 </div>  
 <?php 
 
-echo "<script>displayCatalogPage('$type', '$pageNumber')</script>";
+if (isset($type) && isset($pageNumber)){
+    echo "<script>displayCatalogPage('$type', '$pageNumber')</script>";
+} else if (isset($search)){
+    echo "<script>catalogAssignment($search, '1', 'Велосипеды');</script>";
+}
 
 require_once("php/config.php");
 $displayCatalog = displayCatalog();
@@ -235,3 +248,4 @@ echo "<script>displayCatalog($displayCatalog)</script>";
     });
 </script>
 </body>
+

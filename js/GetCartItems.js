@@ -1,5 +1,5 @@
 $(document).ready(() => {
-    $('.cart-href').click((e) => {
+    $('.cart-href').click(() => {
         location = "cart.php";
     });
 

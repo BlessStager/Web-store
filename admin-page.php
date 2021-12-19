@@ -144,7 +144,7 @@
         <div class="list-of-products">
             <div class="heading">
                 <div>КАТАЛОГ ТОВАРОВ</div>
-                <img onclick="wrapListProducts()" width="36" height="35" src="images/btn-roll.png" alt="button">
+                <img id="catalog-btn" onclick="wrapListProducts()" width="36" height="35" src="images/btn-roll.png" alt="button">
             </div>
             <ul id="listProducts">
                 <div id="catalog-item" class="catalog-item" style="display: none;">

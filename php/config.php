@@ -376,4 +376,16 @@ function addDeliveryOrder($order){
     mysqli_close($connection);
     return true;
 }
+
+function search($request){
+    $connection = mysqli_connect('localhost', 'root', '', 'web-store');
+
+    $query = "SELECT * FROM `product` WHERE `name` LIKE '%$request%'";
+    $result = mysqli_query($connection, $query);
+    $resultNum = mysqli_num_rows($result);
+    $response = mysqli_fetch_all($result);
+
+    mysqli_close($connection);
+    return array($response, $resultNum, 1);
+}
 ?>

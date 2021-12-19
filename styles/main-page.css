@@ -770,4 +770,10 @@ footer {
   .forms #form-category, .forms #form-product, .forms #form-news {
     flex-direction: column; }
 
+#search-btn:hover {
+  cursor: pointer; }
+
+#catalog-btn:hover {
+  cursor: pointer; }
+
 /*# sourceMappingURL=main-page.css.map */
