@@ -11,6 +11,7 @@
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/GetCartItems.js"></script>
     <script src="js/Search.js"></script>
+    <script src="js/PopularProducts.js"></script>
 </head>
 <body>
     <div id="wrapper" class="wrapper hidden">
@@ -91,7 +92,7 @@
         </div>     
         
         <div class="reviews">
-            <div class="rev-name">ОТЗЫВЫ</div>
+            <a href="reviews.php" class="rev-name">ОТЗЫВЫ</a>  
         </div>
     </aside>
 
@@ -111,90 +112,25 @@
     <div class="cards">
         <div class="cards-header">
             <span class="header">ПОПУЛЯРНЫЕ ТОВАРЫ</span>
-            <div class="content">
-                <img src="images/brends/left-arrow.png" alt="left-arrow"/>
-                <div><span class="p1">3 </span><span class="p2"> / 15</span></div>
-                <img src="images/brends/right-arrow.png" alt="right-arrow"/>
-            </div>
         </div>
 
-        <div class="card">
-            <img src="images/card/card.png" alt="card"/>
-            <p>BH Fitness F1 G6414V</p>
-            <p class="p1">Беговая дорожка</p>
-            <div class="bottom">
-                <img class="cart" src="images/card/btn-cart.png" alt="btn-cart"/>
-                <div class="price">
-                    <span>64 990</span>
-                    <img src="images/card/rub.png" alt="rub"/>
-                </div>     
+        <div id="popular-cards" class="popular-cards">
+            <div id="popular-card" class="popular-card" style="display: none;">
+                <div style="width: 200px; height: 200px; display: table-cell; vertical-align: middle;">
+                    <img id="popular-card-image" src="" alt="card"/>
+                </div>
+                <p id="popular-card-title"></p>
+                <p id="popular-card-type" class="p1">Беговая дорожка</p>
+                <div class="bottom">
+                    <img width="40" height="40" id="cart-image" class="cart-image" src="images/card/btn-cart.png" alt="btn-cart"/>
+                    <img width="40" height="40" id="cart-image" class="cart-image-active" style="display: none;" src="catalog-image/cart.png" alt="btn-cart"/>
+                    <div class="price">
+                        <span id="popular-card-price"></span>
+                        <img src="images/card/rub.png" alt="rub"/>
+                    </div>     
+                </div>
             </div>
         </div>
-
-        <div class="card">
-            <img src="images/card/card.png" alt="card"/>
-            <p>BH Fitness F1 G6414V</p>
-            <p class="p1">Беговая дорожка</p>
-            <div class="bottom">
-                <img class="cart" src="images/card/btn-cart.png" alt="btn-cart"/>
-                <div class="price">
-                    <span>64 990</span>
-                    <img src="images/card/rub.png" alt="rub"/>
-                </div>     
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/card/card.png" alt="card"/>
-            <p>BH Fitness F1 G6414V</p>
-            <p class="p1">Беговая дорожка</p>
-            <div class="bottom">
-                <img class="cart" src="images/card/btn-cart.png" alt="btn-cart"/>
-                <div class="price">
-                    <span>64 990</span>
-                    <img src="images/card/rub.png" alt="rub"/>
-                </div>     
-            </div>
-        </div>    
-        
-        <div class="card">
-            <img src="images/card/card.png" alt="card"/>
-            <p>BH Fitness F1 G6414V</p>
-            <p class="p1">Беговая дорожка</p>
-            <div class="bottom">
-                <img class="cart" src="images/card/btn-cart.png" alt="btn-cart"/>
-                <div class="price">
-                    <span>64 990</span>
-                    <img src="images/card/rub.png" alt="rub"/>
-                </div>     
-            </div>
-        </div>    
-
-        <div class="card">
-            <img src="images/card/card.png" alt="card"/>
-            <p>BH Fitness F1 G6414V</p>
-            <p class="p1">Беговая дорожка</p>
-            <div class="bottom">
-                <img class="cart" src="images/card/btn-cart.png" alt="btn-cart"/>
-                <div class="price">
-                    <span>64 990</span>
-                    <img src="images/card/rub.png" alt="rub"/>
-                </div>     
-            </div>
-        </div>    
-
-        <div class="card">
-            <img src="images/card/card.png" alt="card"/>
-            <p>BH Fitness F1 G6414V</p>
-            <p class="p1">Беговая дорожка</p>
-            <div class="bottom">
-                <img class="cart" src="images/card/btn-cart.png" alt="btn-cart"/>
-                <div class="price">
-                    <span>64 990</span>
-                    <img src="images/card/rub.png" alt="rub"/>
-                </div>     
-            </div>
-        </div>    
     </div>
 
     <div class="about-company">

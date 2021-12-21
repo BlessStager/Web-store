@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
     <script src="js/MainScript.js"></script>
-    <script src="js/NewPage.js"></script>
+    <script src="js/ReviewPage.js"></script>
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/Catalog.js"></script>
     <script src="js/GetCartItems.js"></script>
@@ -109,12 +109,12 @@
             </div>
         </div>
         
-        <div class="new-page">
-            <div class="new-page-header">
-                <div id="new-page-title" class="new-page-title"></div>
-                <div id="new-page-date" class="new-page-date"></div>
+        <div class="review-page">
+            <div class="review-page-header">
+                <div id="review-page-title" class="review-page-title"></div>
+                <div id="review-page-date" class="review-page-date"></div>
             </div>
-            <div id="new-page-content" class="new-page-content"></div>
+            <div id="review-page-content" class="review-page-content"></div>
         </div>
 
     <footer>
@@ -188,7 +188,7 @@
     if(isset($_GET['pageID'])){
         $pageID = $_GET['pageID'];
     }
-    echo "<script>NewPageRequest('$pageID');</script>";
+    echo "<script>ReviewPageRequest('$pageID');</script>";
 
     require_once("php/config.php");
     $displayCatalog = displayCatalog();

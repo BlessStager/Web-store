@@ -105,7 +105,7 @@
         </div>     
         
         <div class="reviews">
-            <div class="rev-name">ОТЗЫВЫ</div>
+            <a href="reviews.php" class="rev-name">ОТЗЫВЫ</a>  
         </div>
     </aside>
 

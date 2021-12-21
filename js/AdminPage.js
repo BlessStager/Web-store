@@ -13,4 +13,9 @@ $(document).ready(() => {
         $('#form-news').css('display', 'flex');
         $('#form-news').parent().children().not('#form-news').css('display', 'none');
     })
+
+    $('#btn-form-reviews').click(() => {
+        $('#form-reviews').css('display', 'flex');
+        $('#form-reviews').parent().children().not('#form-reviews').css('display', 'none');
+    })
 })

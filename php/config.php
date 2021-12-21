@@ -108,6 +108,34 @@ function news($currentPage){
     return array($resultArray, $countPage, $countNewsOnPage);
 }
 
+function reviews($currentPage){
+
+    $connection = mysqli_connect('localhost', 'root', '', 'web-store');
+
+    $firstQuery = "SELECT * FROM `reviews`";
+    $firstResult = mysqli_query($connection, $firstQuery);
+    $num = mysqli_num_rows($firstResult);
+
+    $countPage = ceil($num / 10);
+    $countNewsOnLastPage = $num % 10;
+    
+    if ($countPage == $currentPage){
+        $countNewsOnCurrentPage = $countNewsOnLastPage;
+    } else{
+        $countNewsOnCurrentPage = 10;
+    }
+    $minPage = $currentPage * 10 - 10;
+
+    $secondQuery = "SELECT * FROM `reviews` LIMIT $minPage, $countNewsOnCurrentPage";
+    $secondResult = mysqli_query($connection, $secondQuery);
+    $resultArray = mysqli_fetch_all($secondResult);
+    $countNewsOnPage = mysqli_num_rows($secondResult);
+
+    mysqli_close($connection);
+
+    return array($resultArray, $countPage, $countNewsOnPage);
+}
+
 function newPage($id){
     $connection = mysqli_connect('localhost', 'root', '', 'web-store');
 
@@ -118,6 +146,36 @@ function newPage($id){
     mysqli_close($connection);
 
     return $resultArray;
+}
+
+function reviewPage($id){
+    $connection = mysqli_connect('localhost', 'root', '', 'web-store');
+
+    $query = "SELECT * FROM `reviews` WHERE `id`='$id'";
+    $result = mysqli_query($connection, $query);
+    $resultArray = mysqli_fetch_array($result);
+
+    mysqli_close($connection);
+
+    return $resultArray;
+}
+
+function sendReview($text){
+    $connection = mysqli_connect('localhost', 'root', '', 'web-store');
+
+    if(isset($_COOKIE['user'])){
+        $username = $_COOKIE['user'];
+    } else{
+        return false;
+    }
+
+    $date = date('Y-m-d');
+
+    $query = "INSERT INTO `reviews`(`username`, `date`, `text`) VALUES ('$username', '$date', '$text')";
+    $result = mysqli_query($connection, $query);
+
+    mysqli_close($connection);
+    return true;
 }
 
 function displayCatalog(){
@@ -252,8 +310,9 @@ function addProduct(){
         $type = $_POST['typeProd'];
         $price = $_POST['priceProd'];
         $image = $_POST['imageProd'];
+        $description = $_POST['descriptionProd'];
 
-        $query = "INSERT INTO `product`(`name`,`types`,`type`,`price`,`image`) VALUES ('$name', '$types', '$type', '$price', '$image')";
+        $query = "INSERT INTO `product`(`name`,`types`,`type`,`price`,`image`, `description`) VALUES ('$name', '$types', '$type', '$price', '$image', '$description')";
         $result = mysqli_query($connection, $query);
     }   
 
@@ -327,8 +386,22 @@ function changeNews(){
     mysqli_close($connection);
 }
 
+function deleteReviews(){
+    $connection = mysqli_connect('localhost', 'root', '', 'web-store');
+
+    $id = $_POST['idReviewsDel'];
+
+    $query = "DELETE FROM `reviews` WHERE `id`='$id'";;
+    $result = mysqli_query($connection, $query);
+
+    mysqli_close($connection);
+}
+
+
 function addFastOrder($order){
     $connection = mysqli_connect('localhost', 'root', '', 'web-store');
+
+    $user = null;
 
     if(isset($order)){
         if (isset($_COOKIE['user'])){
@@ -344,6 +417,37 @@ function addFastOrder($order){
         $query = "INSERT INTO `fastorder`(`user`,`name`,`number`,`email`) VALUES ('$user', '$name', '$number', '$email')";
         $result = mysqli_query($connection, $query);
     }   
+
+    $query1 = "SELECT * FROM `cart`";
+    $result1 = mysqli_query($connection, $query1);
+    $resultArray1 = mysqli_fetch_all($result1);
+
+    $query2 = "SELECT * FROM `fastorder` WHERE `user`='$user'";
+    $result2 = mysqli_query($connection, $query2);
+    $resultArray2 = mysqli_fetch_all($result2);
+
+    $orderID = 0;
+    $orderPrice = 0;
+
+    for ($i = 0; $i < count($resultArray2); $i++){
+        $orderID = $resultArray2[$i][0];
+    }
+
+    for ($i = 0; $i < count($resultArray1); $i++){
+        $orderName = $resultArray1[$i][1];
+        $orderPrice = $resultArray1[$i][3];
+        $orderQuantity = $resultArray1[$i][5];
+        $query3 = "INSERT INTO `ordercontent`(`orderID`,`name`,`quantity`,`price`,`orderType`) VALUES ('$orderID', '$orderName', '$orderQuantity','$orderPrice', 'fast')";
+        $result3 = mysqli_query($connection, $query3);
+
+        $query4 = "SELECT * FROM `product` WHERE `name`='$orderName'";
+        $result4 = mysqli_query($connection, $query4);
+        $resultArray4 = mysqli_fetch_array($result4);
+        $productQuantity = $resultArray4[7];
+        $productQuantity = $productQuantity + $orderQuantity;
+        $query5 = "UPDATE `product` SET `sellCount`='$productQuantity' WHERE `name`='$orderName'";
+        $result5 = mysqli_query($connection, $query5);
+    }
 
     mysqli_close($connection);
     return true;
@@ -373,6 +477,37 @@ function addDeliveryOrder($order){
         $result = mysqli_query($connection, $query);
     }   
 
+    $query1 = "SELECT * FROM `cart`";
+    $result1 = mysqli_query($connection, $query1);
+    $resultArray1 = mysqli_fetch_all($result1);
+
+    $query2 = "SELECT * FROM `deliveryorder` WHERE `user`='$user'";
+    $result2 = mysqli_query($connection, $query2);
+    $resultArray2 = mysqli_fetch_all($result2);
+
+    $orderID = 0;
+    $orderPrice = 0;
+
+    for ($i = 0; $i < count($resultArray2); $i++){
+        $orderID = $resultArray2[$i][0];
+    }
+
+    for ($i = 0; $i < count($resultArray1); $i++){
+        $orderName = $resultArray1[$i][1];
+        $orderPrice = $resultArray1[$i][3];
+        $orderQuantity = $resultArray1[$i][5];
+        $query3 = "INSERT INTO `ordercontent`(`orderID`,`name`,`quantity`,`price`,`orderType`) VALUES ('$orderID', '$orderName', '$orderQuantity','$orderPrice','delivery')";
+        $result3 = mysqli_query($connection, $query3);
+
+        $query4 = "SELECT * FROM `product` WHERE `name`='$orderName'";
+        $result4 = mysqli_query($connection, $query4);
+        $resultArray4 = mysqli_fetch_array($result4);
+        $productQuantity = $resultArray4[7];
+        $productQuantity = $productQuantity + $orderQuantity;
+        $query5 = "UPDATE `product` SET `sellCount`='$productQuantity' WHERE `name`='$orderName'";
+        $result5 = mysqli_query($connection, $query5);
+    }
+
     mysqli_close($connection);
     return true;
 }
@@ -387,5 +522,17 @@ function search($request){
 
     mysqli_close($connection);
     return array($response, $resultNum, 1);
+}
+
+function popularProducts(){
+    $connection = mysqli_connect('localhost', 'root', '', 'web-store');
+
+    $query = "SELECT * FROM `product` ORDER BY `sellCount` DESC LIMIT 10";
+    $result = mysqli_query($connection, $query);
+    $response = mysqli_fetch_all($result);
+
+    mysqli_close($connection);
+
+    return $response;
 }
 ?>

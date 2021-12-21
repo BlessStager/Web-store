@@ -9,6 +9,7 @@
     addNews();
     changeNews();
     deleteNews();
+    deleteReviews();
 ?>
 
 <!DOCTYPE html>
@@ -70,6 +71,7 @@
         <button id="btn-form-category">Отредактировать категории</button>
         <button id="btn-form-product">Отредактировать товары</button>
         <button id="btn-form-news">Отредактировать новости</button>
+        <button id="btn-form-reviews">Отредактировать отзывы</button>
     </div>
 
     <div class="forms">
@@ -98,6 +100,7 @@
                 <input name="typeProd" placeholder="Тип товара" required/>
                 <input name="priceProd" placeholder="Цена товара" required/>
                 <input name="imageProd" placeholder="Путь к изображению товара" required/>
+                <input name="descriptionProd" placeholder="Описание товара" required/>
                 <button>Добавить</button>
             </form>
 
@@ -138,6 +141,13 @@
                 <button>Удалить</button>
             </form>
         </div>
+
+        <div id="form-reviews" style="display: none;">
+            <form action="" method="post">
+                <input name="idReviewsDel" placeholder="ID отзыва" required/>
+                <button>Удалить</button>
+            </form>
+        </div>
     </div>
     
     <aside>
@@ -161,7 +171,7 @@
         </div>     
         
         <div class="reviews">
-            <div class="rev-name">ОТЗЫВЫ</div>
+            <a href="reviews.php" class="rev-name">ОТЗЫВЫ</a>  
         </div>
     </aside>
 

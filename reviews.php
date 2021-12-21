@@ -7,7 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
     <script src="js/MainScript.js"></script>
-    <script src="js/NewPage.js"></script>
+    <script src="js/Reviews.js"></script>
+    <script src="js/ReviewPage.js"></script>
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/Catalog.js"></script>
     <script src="js/GetCartItems.js"></script>
@@ -97,25 +98,48 @@
     </aside>
 
     <div class="search">
-            <div class="left-search">
-                <img src="images/search/magn.png" alt="magnifier"/>
-                <span>Поиск</span>
-                <img src="images/search/arrow.png" alt="arrow"/>
+        <div class="left-search">
+            <img src="images/search/magn.png" alt="magnifier"/>
+            <span>Поиск</span>
+            <img src="images/search/arrow.png" alt="arrow"/>
+        </div>
+        <input id="search-input" style="padding: 10px;" type="text">
+        <div id="search-btn" class="right-search">
+            <img src="images/search/btn-search.png" alt="button"/>
+            <span>НАЙТИ</span>
+        </div>
+    </div>
+
+    <div id="all-reviews" class="all-reviews">
+        <div class="all-reviews-header">
+            <span class="header">ОТЗЫВЫ</span>
+            <div class="content">
+                <img class="all-reviews-btn" onclick="reviewsChange('p1', 'dec')" src="images/brends/left-arrow.png" alt="left-arrow"/>
+                <div><span id="p1" class="p1"></span><span class="p3">/</span><span id="p2" class="p2"></span></div>
+                <img class="all-reviews-btn" onclick="reviewsChange('p1', 'inc')" src="images/brends/right-arrow.png" alt="right-arrow"/>
             </div>
-            <input id="search-input" style="padding: 10px;" type="text">
-            <div id="search-btn" class="right-search">
-                <img src="images/search/btn-search.png" alt="button"/>
-                <span>НАЙТИ</span>
+            <script>
+                displayFirstNumber('p1');
+                reviewsRequest('p1');
+            </script>
+        </div>
+
+        <div id="all-reviews-content" class="all-reviews-content">
+            <div id="all-reviews-review" class="all-reviews-review">
+                <div class="all-reviews-review-header">
+                    <h3 id="review-title"></h3>
+                    <span id="review-date"></span>
+                </div>
+                <div id="review-content" class="all-reviews-review-content"></div>
             </div>
         </div>
-        
-        <div class="new-page">
-            <div class="new-page-header">
-                <div id="new-page-title" class="new-page-title"></div>
-                <div id="new-page-date" class="new-page-date"></div>
-            </div>
-            <div id="new-page-content" class="new-page-content"></div>
+
+        <button id="new-review-button">Оставить отзыв</button>
+        <div id="new-review-text" style="display: none;">
+            <textarea></textarea>
+            <button id="send-review">Отправить отзыв</button>
         </div>
+    </div>
 
     <footer>
         <div class="footer-line">
@@ -184,18 +208,13 @@
         </div>
     </footer>
 </div>  
-    <?php
-    if(isset($_GET['pageID'])){
-        $pageID = $_GET['pageID'];
-    }
-    echo "<script>NewPageRequest('$pageID');</script>";
-
-    require_once("php/config.php");
-    $displayCatalog = displayCatalog();
-    $displayCatalog = json_encode($displayCatalog);
-    echo "<script>displayCatalog($displayCatalog)</script>";
-    ?>
-    <script>
+<?php 
+require_once("php/config.php");
+$displayCatalog = displayCatalog();
+$displayCatalog = json_encode($displayCatalog);
+echo "<script>displayCatalog($displayCatalog)</script>";
+?>
+<script>
     document.getElementById("wrapper").classList.remove("hidden");
-    </script>
+</script>
 </body>

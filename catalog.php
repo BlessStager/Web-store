@@ -123,7 +123,7 @@
 
     <div class="popular-products">
         <div class="popular-products-header">
-            ПОПУЛЯРНЫЕ ТОВАРЫ
+            НАЙДЕННЫЕ ТОВАРЫ
         </div>
 
         <div id="pagination" class="pagination" style="display: none;">

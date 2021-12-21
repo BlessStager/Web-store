@@ -340,7 +340,7 @@ aside {
 
 .about-company {
   position: absolute;
-  margin-top: 1650px;
+  margin-top: 2415px;
   background: url(../images/about-company-bg.png) 0 0 no-repeat;
   margin-left: 20px;
   margin-right: 20px;
@@ -372,7 +372,7 @@ aside {
 
 footer {
   position: absolute;
-  margin-top: 2415px;
+  margin-top: 3200px;
   width: 1024px; }
 
 .footer-line {
@@ -571,39 +571,45 @@ footer {
     color: #999;
     margin-right: 24px; }
 
-.card {
+.popular-cards {
+  display: flex;
+  flex-wrap: wrap; }
+
+.popular-card {
   margin-top: 31px;
   margin-left: 25px;
   margin-right: 80px;
   padding: 42px 11px 15px 23px;
   width: 263px;
-  float: left; }
-  .card .bottom {
+  border: 1px solid #f3f3f3; }
+  .popular-card .bottom {
     display: flex;
     justify-content: space-between;
     align-items: center; }
-  .card .cart {
+  .popular-card .cart {
     margin-right: 77px; }
-  .card .price {
+  .popular-card .price {
     display: flex;
     justify-content: space-between;
     align-items: center; }
-  .card span {
+  .popular-card span {
     margin-right: 6px;
     font-family: Roboto;
     font-size: 24px;
     font-weight: 900;
     line-height: 1;
     color: #333; }
-  .card p {
+  .popular-card p {
     font-family: Roboto;
     font-size: 16px;
     font-weight: 900;
     line-height: 1.38;
     color: #36949f; }
-  .card .p1 {
+  .popular-card .p1 {
     font-weight: 300;
     margin-bottom: 30px; }
+  .popular-card .cart-image:hover, .popular-card .cart-image-active:hover {
+    cursor: pointer; }
 
 .ra-form {
   width: 750px;
@@ -638,7 +644,7 @@ footer {
     font-size: 16px;
     border-radius: 10px; }
 
-.all-news, .new-page {
+.all-news, .new-page, .all-reviews, .review-page {
   position: absolute;
   margin: 260px 20px 0 260px;
   margin-top: 260px;
@@ -646,23 +652,23 @@ footer {
   margin-right: 20px;
   width: 744px; }
 
-.all-news-header {
+.all-news-header, .all-reviews-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px; }
-  .all-news-header .header {
+  .all-news-header .header, .all-reviews-header .header {
     font-family: Roboto;
     font-size: 36px;
     font-weight: 900;
     letter-spacing: 0.9px;
     text-align: left;
     color: #dadada; }
-  .all-news-header .content {
+  .all-news-header .content, .all-reviews-header .content {
     display: flex;
     justify-content: space-between;
     align-items: center; }
-  .all-news-header .p1 {
+  .all-news-header .p1, .all-reviews-header .p1 {
     font-family: Roboto;
     font-size: 30px;
     font-weight: 900;
@@ -670,14 +676,14 @@ footer {
     color: #333;
     margin-left: 24px;
     margin-right: 5px; }
-  .all-news-header .p2 {
+  .all-news-header .p2, .all-reviews-header .p2 {
     font-family: Roboto;
     font-size: 14px;
     font-weight: 500;
     letter-spacing: 0.35px;
     color: #999;
     margin-right: 24px; }
-  .all-news-header .p3 {
+  .all-news-header .p3, .all-reviews-header .p3 {
     font-family: Roboto;
     font-size: 14px;
     font-weight: 500;
@@ -685,7 +691,7 @@ footer {
     color: #999;
     margin-right: 5px; }
 
-.all-news-new {
+.all-news-new, .all-reviews-review {
   padding: 10px;
   border: 1px solid #1aa7b9;
   margin-bottom: 20px;
@@ -693,42 +699,42 @@ footer {
   height: 200px;
   flex-direction: column;
   display: none; }
-  .all-news-new span {
+  .all-news-new span, .all-reviews-review span {
     color: #1aa7b9; }
 
-.all-news-new-header {
+.all-news-new-header, .all-reviews-review-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px; }
 
-.all-news-new-content {
+.all-news-new-content, .all-reviews-review-content {
   margin-top: auto;
   margin-bottom: auto;
   font-size: 12px; }
 
-.new-page {
+.new-page, .review-page {
   font-family: Roboto;
   letter-spacing: 0.9px; }
 
-.new-page-date {
+.new-page-date, .review-page-date {
   white-space: nowrap; }
 
-.new-page-header {
+.new-page-header, .review-page-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
   color: #1aa7b9; }
 
-.new-page-title {
+.new-page-title, .review-page-title {
   font-size: 36px;
   font-weight: 900;
   text-align: center;
   word-break: break-word;
   margin-right: 100px; }
 
-.new-page-content {
+.new-page-content, .review-page-content {
   word-break: break-word;
   font-size: 16px;
   padding: 0px 40px; }
@@ -752,12 +758,15 @@ footer {
   border-radius: 10px;
   border: none; }
 
+#form-btns button {
+  width: 150px; }
+
 #form-btns button:hover, .forms button:hover {
   cursor: pointer; }
 
 .forms {
   position: absolute;
-  margin-top: 240px;
+  margin-top: 260px;
   margin-left: 260px;
   margin-right: 20px; }
   .forms div form {
@@ -774,6 +783,35 @@ footer {
   cursor: pointer; }
 
 #catalog-btn:hover {
+  cursor: pointer; }
+
+#new-review-button, #new-review-text button {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 5px;
+  background-color: #1aa7b9;
+  color: white;
+  font-family: Roboto;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none; }
+
+#new-review-text {
+  display: flex;
+  align-items: center; }
+
+#new-review-text textarea {
+  padding: 5px;
+  width: 400px;
+  height: 200px;
+  resize: none;
+  margin-right: 10px; }
+
+#new-review-button {
+  width: 165px;
+  height: 30px; }
+
+#new-review-button:hover, #new-review-text button:hover {
   cursor: pointer; }
 
 /*# sourceMappingURL=main-page.css.map */
